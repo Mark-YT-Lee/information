@@ -1,155 +1,279 @@
+* { 
+  box-sizing: border-box;
+}
 
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background-color: black;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  /* 預設左右排列 */
+  flex-direction: row;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background-color: black;
-      color: white;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      display: flex;
-    }
+/* 左側側邊欄 */
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+}
 
-    /* 左側側邊欄 */
-    .sidebar {
-      width: 200px;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px 0;
-      position: fixed;
-      left: 0;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.sidebar h2 {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: white;
+}
 
-    .sidebar h2 {
-      font-size: 22px;
-      margin-bottom: 30px;
-      color: white;
-    }
+.sidebar a {
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px 20px;
+  width: 100%;
+  text-align: left;
+  display: block;
+  transition: background 0.3s;
+}
 
-    .sidebar a {
-      color: #ccc;
-      text-decoration: none;
-      padding: 10px 20px;
-      width: 100%;
-      text-align: left;
-      display: block;
-      transition: background 0.3s;
-    }
+.sidebar a:hover {
+  background-color: #333;
+  color: white;
+}
 
-    .sidebar a:hover {
-      background-color: #333;
-      color: white;
-    }
+/* 主內容 */
+.main-content {
+  margin-left: 200px;
+  padding: 40px 20px;
+  width: calc(100% - 200px);
+  text-align: center;
+}
 
-    /* 主內容 */
-    .main-content {
-      margin-left: 200px;
-      padding: 40px 20px;
-      width: calc(100% - 200px);
-      text-align: center;
-    }
+h1 {
+  margin-top: 30px;
+  font-size: 36px;
+}
 
-    h1 {
-      margin-top: 30px;
-      font-size: 36px;
-    }
+p {
+  margin: 20px auto;
+  width: 80%;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.05em; 
+}
 
-    p {
-      margin: 20px auto;
-      width: 80%;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 40px;
-      max-width: 1000px;
-      margin: auto;
-    }
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-    }
+.gallery img.wide {
+  grid-column: span 2;
+}
 
-    .gallery img.wide {
-      grid-column: span 2;
-    }
+.gallery img.full-width {
+  grid-column: 1 / -1;
+}
 
+.gallery video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
 
+.gallery video.wide {
+  grid-column: span 2;
+}
 
-    .gallery img.full-width {
-      grid-column: 1 / -1;
-    }
+.gallery video.full-width {
+  grid-column: 1 / -1;
+}
 
-    .sns-section {
-      max-width: 600px;
-      margin: 40px auto;
-      font-family: 'Georgia', serif;
-      color: white;
-      text-align: center;
-    }
+.sns-section {
+  max-width: 600px;
+  margin: 40px auto;
+  font-family: 'Georgia', serif;
+  color: white;
+  text-align: center;
+}
 
-    .sns-section h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
+.sns-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
-    .sns-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
+.sns-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
 
-    .sns-section li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 25px;
-      font-size: 18px;
-      line-height: 1.4;
-      border: 1px solid white;
-      padding: 10px 15px;
-      border-radius: 6px;
-    }
+.sns-section li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 25px;
+  font-size: 14px;
+  line-height: 1.4;
+  border: 1px solid white;
+  padding: 10px 15px;
+  border-radius: 6px;
+}
 
-    .sns-section .icon {
-      flex-shrink: 0;
-      width: 24px;
-      height: 24px;
-      margin-top: 4px;
+.sns-section .icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
 
-    }
+.sns-section strong {
+  font-weight: 700;
+  font-size: 20px;
+}
 
-    .sns-section strong {
-      font-weight: 700;
-      font-size: 20px;
-    }
+/* Section anchor padding for visibility */
+.section {
+  scroll-margin-top: 80px;
+}
 
-    /* Section anchor padding for visibility */
-    .section {
-      scroll-margin-top: 80px;
-      padding-top: 40px;
-    }
-    .no-bullets {
-      list-style-type: none;
-      padding-left: 0;
-      margin: 20px auto;
-      width: 80%;
-      font-size: 18px;
-      line-height: 1.6;
-    }
+.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 20px auto;
+  width: 80%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 手機直立時響應式調整 */
+@media (max-width: 900px) {
+  body {
+    /* 改成上下排列 */
+    flex-direction: column;
+  }
+
+  /* 將側邊欄固定改成寬度100%，高度自動 */
+  .sidebar {
+    position: static;  /* 取消固定 */
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: row; /* 改成橫向排列 */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  z-index: 1000; /* 保證它浮在其他元素上 */
+  }
+
+  /* 讓標題和選單項目橫排 */
+  .sidebar h2 {
+    margin: 0;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .sidebar a {
+    padding: 8px 5px;
+    width: auto;
+    text-align: center;
+    font-size: 14px;
+    transition: background 0.3s;
+  }
+  
+  .sidebar a:hover {
+    background-color: #333;
+    color: white;
+  }
+
+  /* 主內容寬度改成100%，取消左邊間距 */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
     
+  }
+
+  p {
+    margin: 15px auto;
+    width: 90%;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    letter-spacing: 0.03em; 
+  }
+
+  .no-bullets {
+    font-size: 9px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  h3 {
+    font-size: 12px;
+  }
+  .gallery {
+    display: grid;
+    gap: 20px;
+    padding: 0 10px;
+    max-width: 100%;
+    margin: auto;
+  }
+}
+  @media (min-width: 901px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 501px) and (max-width: 900px) {
+    .gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+  
+  .gallery img,
+  .gallery video{
+    width: 100%;
+    height: auto;
+    grid-column: span 1;
+    display: block;
+  }
+  
+  }
+
+
